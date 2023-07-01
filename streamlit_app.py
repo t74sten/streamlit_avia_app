@@ -50,11 +50,6 @@ with col12:
     inflight_service = on_board_service
     cleanliness = st.slider("Чистота салона", min_value=1, max_value=5, step=1, value=1)
 
-if st.sidebar.button('Сбросить'):
-    # Clear all widget fields
-    st.sidebar.empty()
-    st.empty()
-
 def write_user_data(df):
     st.write("## Пассажиры")
     st.write(df)
