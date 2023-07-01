@@ -40,7 +40,7 @@ with col11:
     ease_of_online_booking = st.slider("Онлайн бронь", min_value=1, max_value=5, step=1, value=1)
     food_and_drink = st.slider("Качество питания", min_value=1, max_value=5, step=1, value=1)
     online_boarding = st.slider("Оценка места в самолете", min_value=1, max_value=5, step=1, value=1)
-    seat_comfort = st.slider("Комфортность места", min_value=1, max_value=5, step=1, value=1)
+    seat_comfort = st.slider("Комфортабельность места", min_value=1, max_value=5, step=1, value=1)
 
 with col12:
     inflight_entertainment = st.slider("Досуг на борту", min_value=1, max_value=5, step=1, value=1)
