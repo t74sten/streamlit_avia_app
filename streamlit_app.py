@@ -126,7 +126,7 @@ with col1:
 with col3:
     st.markdown('##### Узнать мнение Ваших клиентов')
     st.download_button(label="Скачать шаблон в CSV", data=convert_df(pd.read_csv('data/shablon_s.csv')),
-                       file_name='shablon.csv', mime='text/csv',)
+                       file_name='shablon_s.csv', mime='text/csv',)
 
     uploaded_file = st.file_uploader("Загрузить шаблон с Вашими данными", accept_multiple_files=False)
 
