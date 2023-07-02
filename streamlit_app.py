@@ -107,12 +107,16 @@ with col2:
     number_passangers = st.number_input('Количество пассажиров для генерации',
                                         min_value=1, max_value=1000, value=1, step=1)
 
+    if (st.download_button(label="Получить генерацию без предикта",
+                       data=convert_df(functions.create_passangers(number_passangers)),
+                       file_name='random_passangers_raw.csv', mime='text/csv', ))
+
     if (st.button('Попробовать')):
         st.markdown('#### Параметры и предсказание')
         st.dataframe(generate_features())
         st.download_button(label="Скачать рандом данные в CSV",
                        data=convert_df(prediction_side_bar_inputs()),
-                       file_name='random_passangers.csv', mime='text/csv', )
+                       file_name='random_passangers_pred.csv', mime='text/csv', )
 
 with col1:
     st.markdown('##### Узнать мнение пассажира по анкете')
@@ -125,7 +129,7 @@ with col1:
 
 with col3:
     st.markdown('##### Узнать мнение Ваших клиентов')
-    st.text('Можете кинуть скачанный шаблон в поле ниже,\n там предзаполнена одна строка для проверки,\n спасибо!)')
+    st.text('Можете кинуть скачанный шаблон в поле ниже,\nтам предзаполнена одна строка для проверки,\nспасибо!)')
     st.download_button(label="Скачать шаблон в CSV", data=convert_df(pd.read_csv('data/shablon_s.csv')),
                        file_name='shablon_s.csv', mime='text/csv',)
 
