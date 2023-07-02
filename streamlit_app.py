@@ -105,7 +105,7 @@ col1, col2, col3 = st.columns(3)
 with col2:
     st.markdown('##### Попробовать на сгенерированных данных')
     number_passangers = st.number_input('Количество пассажиров для генерации',
-                                        min_value=1, max_value=100000, value=1, step=1)
+                                        min_value=1, max_value=10000, value=1, step=1)
 
     col100, col200 = st.columns(2)
     with col200:
