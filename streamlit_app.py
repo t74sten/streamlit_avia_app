@@ -107,10 +107,7 @@ with col2:
     number_passangers = st.number_input('Количество пассажиров для генерации',
                                         min_value=1, max_value=1000, value=1, step=1)
 
-    if (st.download_button(label="Получить генерацию без предикта",
-                       data=convert_df(functions.create_passangers(number_passangers)),
-                       file_name='random_passangers_raw.csv', mime='text/csv', ))
-
+    
     if (st.button('Попробовать')):
         st.markdown('#### Параметры и предсказание')
         st.dataframe(generate_features())
