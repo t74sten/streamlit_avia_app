@@ -105,15 +105,28 @@ col1, col2, col3 = st.columns(3)
 with col2:
     st.markdown('##### Попробовать на сгенерированных данных')
     number_passangers = st.number_input('Количество пассажиров для генерации',
-                                        min_value=1, max_value=1000, value=1, step=1)
+                                        min_value=1, max_value=100000, value=1, step=1)
 
-    
-    if (st.button('Попробовать')):
+    col100, col200 = st.columns(2)
+    with col200:
+        without_pred = st.button('Получить без предсказания')
+
+    with col100:
+        with_pred = st.button('Получить с предсказанием')
+
+    if with_pred:
         st.markdown('#### Параметры и предсказание')
         st.dataframe(generate_features())
-        st.download_button(label="Скачать рандом данные в CSV",
+        st.download_button(label="Скачать предикт в CSV",
                        data=convert_df(prediction_side_bar_inputs()),
-                       file_name='random_passangers_pred.csv', mime='text/csv', )
+                       file_name='random_passangers.csv', mime='text/csv', )
+
+    if without_pred:
+        st.markdown('#### Сгенерированные данные')
+        st.dataframe(functions.create_passangers(number_passangers))
+        st.download_button(label="Скачать генерацию в CSV",
+                       data=convert_df(functions.create_passangers(number_passangers)),
+                       file_name='random_passangers.csv', mime='text/csv', )
 
 with col1:
     st.markdown('##### Узнать мнение пассажира по анкете')
