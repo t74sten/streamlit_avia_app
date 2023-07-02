@@ -139,7 +139,7 @@ with col1:
 
 with col3:
     st.markdown('##### Узнать мнение Ваших клиентов')
-    st.text('Можете кинуть скачанный шаблон\nили сгенерированные данные в поле ниже,\nспасибо!)')
+    st.text('Можете кинуть скачанный шаблон или\nсгенерированные данные без предсказания в поле ниже,\nспасибо!)')
     st.download_button(label="Скачать шаблон в CSV", data=convert_df(pd.read_csv('data/shablon_s.csv')),
                        file_name='shablon_s.csv', mime='text/csv',)
 
