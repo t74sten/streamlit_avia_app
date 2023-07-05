@@ -34,3 +34,15 @@
 Идем дальше, может, кому-то понравится и он решит попробовать на своих данных, так пожалуйста!
 Скачиваем шаблон (формат csv), заполняем данными, загружаем свой заполненный файл назад, получаем результат!
 Шаблон уже содержит одну строку данных, для проверки можно просто вытащить его и положить назад, profit!
+
+## Service:
+Streamlit service is available at [passenger-satisfaction-pred.streamlit.app](https://passenger-satisfaction-pred.streamlit.app/) via Streamlit Cloud
+
+To run locally, clone the repo and do the following:
+```
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ streamlit run streamlit_app.py
+```
+The app will be available at `http://localhost:8501`
